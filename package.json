@@ -1,15 +1,17 @@
 {
+  "homepage": "http://nathmsi.github.io/Nathan-Msika-05-07-20",
   "name": "sabai-srael",
   "version": "1.0.0",
   "description": "app mag",
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack-dev-server  --open -d --mode development ",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "jest"
   },
   "keywords": [],
   "author": "nathan",
-  "homepage": "./",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.0",
@@ -22,6 +24,7 @@
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "file-loader": "^6.0.0",
+    "gh-pages": "^3.1.0",
     "html-loader": "^1.1.0",
     "html-webpack-plugin": "^4.3.0",
     "jest": "^26.1.0",

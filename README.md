@@ -9,7 +9,7 @@ npm install
 
 Create a `.env` file for environment variables in your server. 
 
-##### from accuweather.com 
+##### Create a `.env` file for the APIKEY from  accuweather.com
 ```
 REACT_APP_API_KEY=****************************
 ```

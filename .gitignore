@@ -10,8 +10,10 @@ firebase-debug.log*
 .firebase/
 
 /dist
+/build
 # Firebase config
-
+firebase.json
+.firebaserc
 package-lock.json
 
 # Uncomment this if you'd like others to create their own Firebase project.
