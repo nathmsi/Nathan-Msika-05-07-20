@@ -10,33 +10,18 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-
-import MoreIcon from "@material-ui/icons/MoreVert";
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
-import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
-import EditIcon from '@material-ui/icons/Edit';
 import HomeIcon from '@material-ui/icons/Home';
 import PaletteIcon from '@material-ui/icons/Palette';
 
 import CloseIcon from '@material-ui/icons/Close';
-import SelectColorTheme from './SelectColorTheme';
 import SwitchDarkMode from './SwitchDarkMode';
-import ListIcon from '@material-ui/icons/List';
-import Collapse from '@material-ui/core/Collapse';
-import ExpandLess from '@material-ui/icons/ExpandLess';
-import ExpandMore from '@material-ui/icons/ExpandMore';
-import LanguageIcon from '@material-ui/icons/Language';
 import WbSunnyIcon from '@material-ui/icons/WbSunny';
 import MapIcon from '@material-ui/icons/Map';
 
 
 
-import InfoIcon from '@material-ui/icons/Info';
 import PermContactCalendarIcon from '@material-ui/icons/PermContactCalendar';
 import {
     NavLink,
@@ -50,9 +35,8 @@ import FindLocalisationWeather from './FindLocalisationWeather';
 
 // redux
 import { useSelector, useDispatch } from 'react-redux'
-import {
-    
-} from '../../store/actions';
+
+// use dimenssions
 import useWindowDimensions from '../../hooks/useWindowsDimention';
 
 

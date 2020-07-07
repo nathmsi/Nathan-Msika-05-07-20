@@ -9,8 +9,6 @@ import useWindowsDimention from '../../hooks/useWindowsDimention';
 
 const useStyles = makeStyles((theme) => ({
     content: {
-        display: 'flex',
-        justifyContent: 'center'
     },
     item: {
         display: 'flex',

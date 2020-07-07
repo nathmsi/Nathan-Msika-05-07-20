@@ -13,7 +13,7 @@ import { useSelector } from 'react-redux';
 
 const useStyles = makeStyles((theme) => ({
     mainContent: {
-        marginTop: 48 + 20, 
+        marginTop: 48 + 20,  // the navbar height + separation
     },
 }));
 

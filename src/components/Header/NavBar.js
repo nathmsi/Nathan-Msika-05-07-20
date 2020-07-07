@@ -89,15 +89,18 @@ const useStyles = makeStyles(theme => ({
         margin: 4,
         color: theme.palette.secondary.main,
     },
-    search: {
-        // display: 'flex',
-        // flexDirection: 'row',
-        // justifyContent: 'center',
-        // alignItems: 'center',
-        // alignContent: 'center',
-        // border: 'solid 1px  red',
-        // flexWrap: 'nowrap',
-    }
+    iconSunny: {
+        color: '#fcd21c',
+        animation: `$myEffect 6000ms infinite  ${theme.transitions.easing.easeInOut}`
+    },
+    "@keyframes myEffect": {
+        "0%": {
+          transform: "rotate(0deg)"
+        },
+        "100%": {
+          transform: "rotate(359deg)"
+        }
+      },
 }));
 
 function NavBar(props) {
@@ -147,7 +150,7 @@ function NavBar(props) {
                 position="fixed"
                 color="secondary"
                 style={{
-                    opacity: 0.8
+                    opacity: 1
                 }}
             >
                 <Toolbar variant="dense" color="secondary">
@@ -169,7 +172,7 @@ function NavBar(props) {
                                 <Typography className={classes.title} align="center" color="inherit" >
                                     {"Weather"}
                                 </Typography>
-                                { theme.palette.type === 'dark'?  <CloudIcon /> : <WbSunnyIcon style={{ color: '#fcd21c' }}/> }
+                                { theme.palette.type === 'dark'?  <CloudIcon /> : <WbSunnyIcon  className={classes.iconSunny} /> }
                             </Button>
                             : null
                     }

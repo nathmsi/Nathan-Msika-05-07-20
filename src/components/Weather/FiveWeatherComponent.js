@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Container, Grid } from '@material-ui/core';
-
+import {  Grid  } from '@material-ui/core';
 import WeatherView from './WeatherView';
 
 import WeatherViewSkelton from './WeatherViewSkelton';
@@ -86,7 +85,7 @@ export default function TitlebarGridList(props) {
                         : null
                 }
                 {
-                    (loading || errorMessage) ?
+                    (loading || (errorMessage && (result === null) )) ?
                         <>
                             {
                                 [0, 1, 2, 3, 4].map(key => (

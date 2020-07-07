@@ -13,7 +13,7 @@ const Paris = {
 }
 
 const INITIAL_STATE = {
-    selectedCountry: TelAviv
+    selectedCountry: TelAviv // default value selected 
 };
 
 

@@ -3,7 +3,8 @@ import { useState } from 'react';
 // axios api
 import yelp from '../api/yelp';
 
-const apikey = 'TmKFe7fbrlXsUY1XaWdPpbI94VaKbWrgk';
+
+const apikey = process.env.REACT_APP_API_KEY  //  'hwvlCSyyDWPgwLiZXmEGDcluQ6td3kJWL';
 
 
 export default () => {

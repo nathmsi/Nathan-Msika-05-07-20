@@ -9,7 +9,7 @@ import WeatherCardSingle from '../components/Weather/WeatherCardFiveDays';
 
 const useStyles = makeStyles((theme) => ({
     mainContent: {
-        marginTop: 48 + 20,
+        marginTop: 48 + 20, // the navbar height + separation
     },
 }));
 

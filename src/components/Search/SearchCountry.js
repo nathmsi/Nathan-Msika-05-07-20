@@ -15,7 +15,7 @@ import {
     SelctedCountry
 } from '../../store/actions';
 
-import useSeachCountry from '../../hooks/useSeachCountry';
+import useSeachCity from '../../hooks/useSeachCity';
 
 const useStyles = makeStyles((theme) => ({
     option: {
@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
         '& > span': {
             marginRight: 10,
             fontSize: 18,
+            marginTop: 20
         },
     },
     content: {
@@ -47,7 +48,7 @@ export default function CountrySelect() {
         errorMessage,
         success,
         autoComplateSearch
-    } = useSeachCountry();
+    } = useSeachCity();
 
     const {
         selectedValue,

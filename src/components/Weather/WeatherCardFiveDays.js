@@ -1,40 +1,15 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
 
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import Slide from '@material-ui/core/Slide';
-import DialogTitle from '@material-ui/core/DialogTitle';
-
-import Tooltip from '@material-ui/core/Tooltip';
-
-import CloseIcon from '@material-ui/icons/Close';
-import IconButton from "@material-ui/core/IconButton";
-
-import Button from '@material-ui/core/Button';
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
-
-import SnackBar from '../SnackBar/SnackBar';
-import Skeleton from '@material-ui/lab/Skeleton';
-import Avatar from '@material-ui/core/Avatar';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-
-import { Container } from '@material-ui/core';
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import {
+    Container,
+    Grow
+} from '@material-ui/core';
 
 
 import WeatherCurrent from './WeatherCurrent';
-
-// hooks
-import useWindowDimention from '../../hooks/useWindowsDimention';
-import use5daysWeather from '../../hooks/use5daysWeather';
 
 // redux
 import { useDispatch, useSelector } from 'react-redux'
@@ -42,12 +17,9 @@ import {
     addToFavorite
 } from '../../store/actions';
 
-import Zoom from '@material-ui/core/Zoom';
-
 
 
 import FiveWeather from './FiveWeatherComponent';
-
 
 
 const useStyles = makeStyles((theme) => ({
@@ -96,6 +68,9 @@ const useStyles = makeStyles((theme) => ({
         height: theme.spacing(8),
         alignSelf: 'center'
     },
+    card: {
+       // backgroundImage: `url(${Background})`
+    }
 }));
 
 
@@ -121,7 +96,7 @@ function WeatherCard(props) {
             const found = favorites.some(el => el.Key === selectedCountry.Key);
             if (found) {
                 setIsLiked(true);
-            }else{
+            } else {
                 setIsLiked(false);
             }
         }
@@ -143,17 +118,18 @@ function WeatherCard(props) {
 
 
     return (
-
         <div className={classes.content}>
             <Container maxWidth="lg"  >
-                <Card  >
-                    <CardContent>
-                        <WeatherCurrent selectedCountry={selectedCountry} isLiked={isLiked} addToFavorite={(obj)=> dispatch(addToFavorite(obj))} />
-                        <div className={classes.fiveWeather}>
-                            <FiveWeather selectedCountry={selectedCountry} />
-                        </div>
-                    </CardContent>
-                </Card>
+                <Grow in={true} timeout={1000}>
+                    <Card  className={classes.card} >
+                        <CardContent>
+                            <WeatherCurrent selectedCountry={selectedCountry} isLiked={isLiked} addToFavorite={(obj) => dispatch(addToFavorite(obj))} />
+                            <div className={classes.fiveWeather}>
+                                <FiveWeather selectedCountry={selectedCountry} />
+                            </div>
+                        </CardContent>
+                    </Card>
+                </Grow>
             </Container>
         </div>
     );

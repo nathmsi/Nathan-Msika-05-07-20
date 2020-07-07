@@ -1,6 +1,6 @@
 import createDataContext from './createDataContext'
  
-
+// context to control the theme mode and temperature
 
 const Reducer = (state, action) => {
     switch (action.type) {

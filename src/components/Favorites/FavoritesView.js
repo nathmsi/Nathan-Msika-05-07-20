@@ -20,7 +20,6 @@ import SnackBar from '../SnackBar/SnackBar';
 
 // redux
 import { useSelector, useDispatch } from 'react-redux'
-
 import {
     SelctedCountry,
     deleteOneFavorite

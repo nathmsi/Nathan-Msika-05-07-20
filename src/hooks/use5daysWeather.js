@@ -6,7 +6,7 @@ import yelp from '../api/yelp';
 // theme context for the temperature if is C or F
 import { Context as ThemeContext } from '../contexts/themeContext';
  
-const apikey = 'TmKFe7fbrlXsUY1XaWdPpbI94VaKbWrgk';
+const apikey = process.env.REACT_APP_API_KEY  //'hwvlCSyyDWPgwLiZXmEGDcluQ6td3kJWL';
 
 export default () => {
 
@@ -25,6 +25,7 @@ export default () => {
     const get5daysWeather = async (Key) => {
         try {
             setLoading(true);
+            setResult(null);
             setErrorMessage('');
              const path = `/forecasts/v1/daily/5day/${Key}?apikey=${apikey}&metric=${temperature === 'C'}`
             const response = await yelp.get(path)
