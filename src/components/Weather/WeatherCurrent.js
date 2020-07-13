@@ -91,7 +91,7 @@ function WeatherCard(props) {
 
     React.useEffect(() => {
         getCurrentWeather(selectedCountry.Key);
-    }, []);
+    }, [selectedCountry]);
 
     React.useEffect(() => {
         if (errorMessage) {
@@ -134,15 +134,15 @@ function WeatherCard(props) {
 
 
                 <div className={classes.temperatureTitle}>
-                    {(loading || errorMessage) ?
+                    {(loading || errorMessage || !result) ?
                         <Skeleton variant="circle" className={classes.avatar} />
                         :
-                        <Avatar className={classes.avatar} align="center" src={`https://developer.accuweather.com/sites/default/files/0${result ? result.WeatherIcon : ''}-s.png`} />
+                        <Avatar className={classes.avatar} align="center" src={`https://developer.accuweather.com/sites/default/files/${result ? result.WeatherIcon < 10 ? '0' : '' : ''}${result.WeatherIcon}-s.png`} />
                     }
                 </div>
 
 
-                {(loading || errorMessage) ? (
+                {(loading || errorMessage || !result ) ? (
                     <Skeleton width="100%" style={{ alignSelf: 'center' }}>
                         <Typography gutterBottom variant="h6" align="center">.</Typography>
                     </Skeleton>
@@ -153,7 +153,7 @@ function WeatherCard(props) {
                         </Typography>
                     )}
 
-                {(loading || errorMessage) ? (
+                {(loading || errorMessage || !result ) ? (
                     <Skeleton width="100%" style={{ alignSelf: 'center' }}>
                         <Typography gutterBottom variant="h6" align="center">.</Typography>
                     </Skeleton>

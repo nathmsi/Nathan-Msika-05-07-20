@@ -89,10 +89,6 @@ export const { Context, Provider } = createDataContext(
     },
     {
         theme: themeDark,
-        language: 'en',
-        menuLanguages: [
-            'en', 'fr' , 'he'
-        ],
         menuTemperatures : ['C','F'],
         temperature: 'C',
     }

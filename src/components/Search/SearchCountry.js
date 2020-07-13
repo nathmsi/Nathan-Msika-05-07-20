@@ -11,7 +11,6 @@ import SnackBar from '../SnackBar/SnackBar';
 import { useSelector, useDispatch } from 'react-redux';
 import {
     searchOnChange,
-    searchOnSelect,
     SelctedCountry
 } from '../../store/actions';
 
@@ -42,13 +41,20 @@ export default function CountrySelect() {
 
     const dispatch = useDispatch();
 
+    let timeout = null;
+
+    // const {
+    //    // searchOnChange,
+    //     loading,
+    //     errorMessage,
+    //     success,
+    //     autoComplateSearch
+    // } = useSeachCity();
+
     const {
-        searchOnChange,
-        loading,
         errorMessage,
-        success,
         autoComplateSearch
-    } = useSeachCity();
+    } = useSelector(state => state.search);
 
     const {
         selectedValue,
@@ -68,13 +74,24 @@ export default function CountrySelect() {
     }
 
     const handleSeacheChange = (value) => {
-        if (/^[a-zA-Z]+(-[a-zA-Z]+)*$/.test(value) || value === '') {  // accept only letter English only
-            setSearchValue(value);
+        setSearchValue(value);
+        // if (timeout) clearTimeout(timeout);
+        // timeout = setTimeout(() => {
+        //     if (/^[a-zA-Z0-9_ ]*$/.test(value) || value === '') {  // accept only letter English only number and  space between word      
+        //         if (!value.indexOf(searchValue) > -1) {
+        //             //searchOnChange(value)
+        //         }
+        //     }
+        // }, 900);
+        if (value !== '' && searchValue !== value) {
             if (!value.indexOf(searchValue) > -1) {
-                searchOnChange(value)
+                dispatch(searchOnChange(value));
             }
         }
-    }
+
+    };
+
+
 
     React.useEffect(() => {
         handleSelectCountry(selectedValue)

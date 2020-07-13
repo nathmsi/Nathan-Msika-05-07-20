@@ -23,7 +23,7 @@ const MainScreen = (props) => {
     return (
             <MuiThemeProvider theme={createMuiTheme(theme.state.theme)}>
                 <CssBaseline />
-                <Header isAuth={true} />
+                <Header/>
                 <MainRoute />
             </MuiThemeProvider>
     );

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import yelp from '../api/yelp';
 
-const apikey = process.env.REACT_APP_API_KEY //'hwvlCSyyDWPgwLiZXmEGDcluQ6td3kJW';
+const apikey = process.env.REACT_APP_API_KEY;
 
 // redux
 import { useDispatch } from 'react-redux';

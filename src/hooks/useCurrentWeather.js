@@ -3,7 +3,7 @@ import { useState , useContext } from 'react';
 // axios api
 import yelp from '../api/yelp';
 
-const apikey = process.env.REACT_APP_API_KEY  //'hwvlCSyyDWPgwLiZXmEGDcluQ6td3kJWL';
+const apikey = process.env.REACT_APP_API_KEY  //;
 
 
 export default () => {
@@ -18,6 +18,7 @@ export default () => {
     const getCurrentWeather = async (myKey) => {
         try {
             setLoading(true);
+            setResult(null);
             setErrorMessage('');
             let path = `/currentconditions/v1/${myKey}?apikey=${apikey}`
             const response = await yelp.get(path)
@@ -27,12 +28,14 @@ export default () => {
                 setSuccess(true);
             } else {
                 setSuccess(false);
+                setResult(null);
                 setErrorMessage('problem to load weather');
             }
              setLoading(false);
         }
         catch (error) {
             console.log(error);
+            setResult(null);
             setLoading(false);
             setErrorMessage('problem to load weather');
         }

@@ -18,6 +18,7 @@ import { HashRouter } from 'react-router-dom';
 
 // ThemeProvider
 import { Provider as ThemeProvider } from './contexts/themeContext';
+
 // ProviderNavigation
 import { Provider as ProviderNavigation } from './contexts/navigationContext';
 
@@ -26,7 +27,7 @@ import { Provider as ProviderNavigation } from './contexts/navigationContext';
 const App = () => {
     return (
         <ReduxProvider store={store}>
-            <PersistGate loading={null} persistor={persistor}>
+            <PersistGate  persistor={persistor}>
                 <HashRouter>
                     <ThemeProvider>
                         <ProviderNavigation>
@@ -38,10 +39,6 @@ const App = () => {
         </ReduxProvider>
     )
 };
-
-
-
-
 
 
 
