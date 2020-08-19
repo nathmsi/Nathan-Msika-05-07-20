@@ -91,14 +91,14 @@ const useStyles = makeStyles(theme => ({
     },
     iconSunny: {
         color: '#fcd21c',
-        animation: `$myEffect 6000ms infinite  ${theme.transitions.easing.easeInOut}`
+        animation: `$rotateEffect 5000ms infinite  linear`
     },
-    "@keyframes myEffect": {
-        "0%": {
+    "@keyframes rotateEffect": {
+        "form": {
           transform: "rotate(0deg)"
         },
-        "100%": {
-          transform: "rotate(359deg)"
+        "to": {
+          transform: "rotate(360deg)"
         }
       },
 }));

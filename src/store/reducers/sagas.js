@@ -7,7 +7,7 @@ import {
     SEARCH_ONCHANGE_ERROR
 } from '../actions/types';
 
-const apikey = process.env.REACT_APP_API_KEY;
+const apikey = process.env.REACT_APP_API_KEY
 
 
 function* callApiSearchWeather(action) {
@@ -27,6 +27,8 @@ function* callApiSearchWeather(action) {
         });
     }
 }
+
+
 
 
 export default function* mySaga() {

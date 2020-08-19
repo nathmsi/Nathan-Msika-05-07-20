@@ -16,19 +16,20 @@ import mySaga from './sagas'
 import WeatherReducer from './WeatherReducer';
 import FavoritesReduce from './FavoritesReduce';
 import SearchReducer from './SearchReducer';
-
+import { reducer as reduxFormReducer } from 'redux-form';
 
 const reducers = combineReducers({
     weather: WeatherReducer,
     favorites: FavoritesReduce,
-    search: SearchReducer
+    search: SearchReducer,
+    form: reduxFormReducer
 })
 
 
 const rootPersistConfig = {
     key: 'persist-data',
     storage: storage,
-    blacklist: ['weather','search'],
+    blacklist: ['weather','search','form'],
 }
 
 
